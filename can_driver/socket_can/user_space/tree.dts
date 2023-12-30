@@ -1,0 +1,25 @@
+pinctrl_flexcan1: flexcan1grp {
+	fsl,pins = <
+		MX6UL_PAD_UART3_RTS_B__FLEXCAN1_RX	0x1b020 // CAN_RX UART3_RTS
+		MX6UL_PAD_UART3_CTS_B__FLEXCAN1_TX	0x1b020 // CAN_TX UART3_CTS
+	>;
+};
+// CAN1
+flexcan1: can@02090000 {
+	compatible = "fsl,imx6ul-flexcan", "fsl,imx6q-flexcan"; // NXP CA
+	reg = <0x02090000 0x4000>;
+	interrupts = <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>;
+	clocks = <&clks IMX6UL_CLK_CAN1_IPG>,
+		 <&clks IMX6UL_CLK_CAN1_SERIAL>;
+	clock-names = "ipg", "per";
+	stop-mode = <&gpr 0x10 1 0x10 17>;
+	status = "disabled";
+};
+
+// if you want to enable 
+&flexcan1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_flexcan1>; 
+	xceiver-supply = <&reg_can_3v3>; // CAN3.3V
+	status = "okay"; // 
+};
