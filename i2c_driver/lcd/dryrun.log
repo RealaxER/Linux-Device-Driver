@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/asus/device_driver/i2c_driver/lcd'
+ 
+make ARCH=arm CROSS_COMPILE=/home/asus/bbb/kernelbuildscripts/dl/gcc-8.5.0-nolibc/arm-linux-gnueabi/bin/arm-linux-gnueabi- -C /home/asus/bbb/kernelbuildscripts/KERNEL/ M=/home/asus/device_driver/i2c_driver/lcd EXTRA_CFLAGS="-I/home/asus/device_driver/i2c_driver/lcd" modules
+make: Leaving directory '/home/asus/device_driver/i2c_driver/lcd'
+ 

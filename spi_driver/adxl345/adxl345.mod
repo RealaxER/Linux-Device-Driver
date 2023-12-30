@@ -1,0 +1,2 @@
+/home/asus/device_driver/spi_driver/adxl345/adxl345.o
+

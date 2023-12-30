@@ -1,0 +1,2 @@
+/home/asus/device_driver/mpu6050_i2c/mpu6050.o
+
